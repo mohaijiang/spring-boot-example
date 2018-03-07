@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 启动类
- * Created by mohaijiang on 17-7-5.
+ * @author mohaijiang
+ * @since  17-7-5
  */
 @Controller
 @EnableAutoConfiguration
@@ -19,10 +20,10 @@ public class SampleController  extends SpringBootServletInitializer {
     @RequestMapping("/")
     @ResponseBody
     String home() {
-        return "Hello World version 321 !";
+        return "Hello World version 322 !";
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         SpringApplication.run(SampleController.class, args);
     }
 
