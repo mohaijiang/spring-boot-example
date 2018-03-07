@@ -20,7 +20,7 @@ public class SampleController  extends SpringBootServletInitializer {
     @RequestMapping("/")
     @ResponseBody
     String home() {
-        return "Hello World version 323 !";
+        return "Hello World version 326 !";
     }
 
     public static void main(String[] args) {
