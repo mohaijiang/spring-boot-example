@@ -13,7 +13,7 @@ public class MainTest {
 
     @Test
     public void test(){
-        Assert.assertEquals("abcd","abcd4");
+        Assert.assertEquals("abcd","abcd5");
     }
 
 }
