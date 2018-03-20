@@ -1,12 +1,40 @@
 pipeline {
-    agent none
+    agent {
+        docker {
+            label 'docker-node'
+            image 'maven:3-alpine'
+            args '-v $HOME/.m2:/root/.m2'
+        }
+     }
+
+     environment {
+        GIT_COMMITTER_NAME = 'jenkins'
+     }
+
+    options {
+        timeout(6, HOURS)
+    }
+
     stages {
-        stage('Example Build') {
-            agent { docker 'maven:3-alpine' }
+        stage('Build') {
             steps {
-                echo 'Hello, Maven'
-                sh 'mvn clean package'
+                sh 'mvn clean install'
             }
+        }
+        stage('Archive') {
+            when {
+                branch '*/master'
+            }
+            steps {
+                archive '*/target/**/*'
+                junit '*/target/surefire-reports/*.xml'
+            }
+        }
+    }
+
+    post {
+        always {
+            deleteDir()
         }
     }
 }
