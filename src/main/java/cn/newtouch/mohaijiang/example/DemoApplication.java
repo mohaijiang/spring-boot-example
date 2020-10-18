@@ -14,11 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoApplication {
 
-    private int count = 0;
+    private double count = 0;
 
     @GetMapping
     public String hello(){
-        return "hello " + count++ + "times";
+        count += 0.5;
+        return "hello " + count + "times";
     }
 
     public static void main(String[] args) {
