@@ -225,6 +225,8 @@ docker.withRegistry 接收2个参数，
 ![log](./img/9.png)
 
 
+有些同学可能会好奇，拉取代码这个步骤呢？ 其实使用代码嵌入的Jenkinsfile， 每次构建会自动的拉取代码，不用特意的进行声明。
+
 ## 一些实践中不一样的内容
 
 在实际的项目中，以上步骤可能还需要加入更多的步骤。比如：
@@ -242,9 +244,10 @@ docker.withRegistry 接收2个参数，
 
 ## 总结
 
-jenkins pipeline 是jenkins 比较新的技术，尤其是嵌入代码的Jenkinsfile
+jenkins pipeline正在做到了自由的定义流程，不受限与表单，尤其是嵌入代码的Jenkinsfile
 允许各位小伙伴想写代码一样的定义构建流程，并可以很方便的被他人审计。本文就抛个砖头，希望对
 大家有所帮助。
+
 
 以后有机会继续 CICD的第二弹 `gitlab ci` ， 和第三弹 `github Action`，它们各自拥有与jenkins不一样的特点。
 
