@@ -18,7 +18,7 @@ public class DemoApplication {
 
     @GetMapping
     public String hello(){
-        count += 0.5;
+        count += 1;
         return "hello " + count + "times";
     }
 
